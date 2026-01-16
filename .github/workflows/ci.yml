@@ -28,7 +28,12 @@ jobs:
       - name: Prisma validate
         run: npx prisma validate
         env:
-            DATABASE_URL: postgresql://postgres:postgres@localhost:5432/mediagenda?schema=public
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/mediagenda?schema=public
+
+      - name: Prisma generate
+        run: npx prisma generate
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/mediagenda?schema=public
 
       - name: Lint
         run: npm run lint

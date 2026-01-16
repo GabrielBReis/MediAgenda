@@ -14,7 +14,7 @@ export class MedicosService {
     return this.prisma.medico.create({ data: dto });
   }
 
-  async findAll() {
+  findAll() {
     return this.prisma.medico.findMany({ orderBy: { nome: 'asc' } });
   }
 }
